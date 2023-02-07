@@ -1,0 +1,60 @@
+.team{
+    background-color: #fff;
+    padding: 10rem 0;
+    &-list{
+        @include flexbox(stretch, space-between);
+    }
+    &-item{
+        width: calc(33.33% - 20px);
+    }
+    &-image{
+        @include size(100%);
+        object-fit: cover;
+    }
+    &-social{
+      @include flexbox(center,center);
+      
+      &-item:not(:first-child){
+        border-left: 1px solid $primary-color;
+      }
+
+      &-link{
+        @include flexbox(center,center);
+        @include size(6rem);
+        @include bg($secondary-color);
+        color: $primary-color;
+        font-size: 2rem;
+        transition: all .2s ease;
+        &:hover{
+            color: white;
+            @include bg($primary-color);
+        }
+      }
+    }
+    &-info{
+        margin-top: 3rem;
+        text-align: center;
+    }
+    &-name{
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+    &-position{
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    @include maxwidth(1023px){
+        &-list{
+            @include touchSlider(70%);
+        }
+    }
+}
+@include hoverEffect(".team-main",".team-content");
+
+.brand{
+    padding: 8rem 0;
+    @include bg($gray-color);
+}

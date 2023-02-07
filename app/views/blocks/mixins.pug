@@ -1,0 +1,62 @@
+mixin menuLink(title, href = "#")
+    li.header-menu-item 
+        a.header-menu-link(href= href)= title 
+
+mixin headerBottomItem(number, title)
+    .header-bottom-item.is-active 
+        span.header-bottom-number= number 
+        span.header-bottom-text= title
+
+mixin blockBox(caption, title, desc)
+    .block-box
+        h3.block-box-caption= caption 
+        h2.block-box-heading= title 
+        if desc 
+            p.block-box-desc= desc
+
+mixin aboutItem(src, title, iconClass, alt="")
+    .about-item 
+        img.about-image(src=src, alt= alt)
+        .about-content 
+            i.about-icon(class=iconClass)  
+            span.about-title= title 
+
+mixin serviceItem(src, title, desc,alt ="" )
+    .service-item 
+        img.service-item-icon(src=src, alt=alt)
+        .service-item-info 
+            h3.service-item-title= title  
+            p.service-item-desc= desc  
+
+mixin wedoItem(src, title, desc, active="")
+    .wedo-item(class= active)
+        .wedo-item-header 
+            img(src=src).wedo-item-icon
+            h3.wedo-item-title= title  
+            i.fa.fa-angle-down.wedo-item-arrow 
+        .wedo-item-content 
+            .wedo-item-text= desc
+mixin peopleItem(src,name,job)
+    li.people-item 
+        img.people-avt(src=src)
+        .people-info 
+            h3.people-name= name 
+            span.people-job= job 
+            p.people-desc Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nemo in nihil eveniet asperiores similique. Reprehenderit, dolorem quasi? Quibusdam voluptatibus hic odit. Quod, rem iste hic vero corporis non tenetur.
+
+mixin storyItem(src,num,text, eye, cmt,title="Lorem ipsum dolor sit amet",desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure minus debitis in recusandae ipsa, sit fugiat provident esse blanditiis libero quia nam nemo labore modi. Temporibus qui")
+    li.story-item 
+        .story-media 
+            img.story-image(src=src, alt="")
+            .story-date 
+                span.story-date-number= num  
+                span.story-date-text= text
+        h3.story-title= title   
+        p.story-desc= desc 
+        .story-meta 
+            .story-meta-item 
+                i.fa.fa-eye.story-meta-icon 
+                span.story-meta-number= eye
+            .story-meta-item 
+                i.fa.fa-comment.story-meta-icon 
+                span.story-meta-number= cmt

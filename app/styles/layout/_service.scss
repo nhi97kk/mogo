@@ -1,0 +1,54 @@
+.service{
+    padding: 11rem 0 12rem;
+    @include bg(white);
+    &-list{
+        @include flexbox(stretch,space-between);
+        margin-top: 6.5rem;
+        
+    }
+    &-list:first-of-type{
+        border-bottom: 1px solid $darkgray-color;
+        margin-bottom: 6rem;
+        padding-bottom: 5rem;
+    }
+
+    &-item{
+        width: calc(33.33% - 2.7rem);
+        @include flexbox(flex-start);
+        &-icon{
+            width: 3.4rem;
+            margin: 0 3rem;
+        }
+        &-title{
+            color: $title-color;
+            margin-bottom: 1.6rem;
+            text-transform: uppercase;
+        }
+        &-desc{
+            color: $text-color;
+            line-height: 1.6;
+            font-weight: 300;
+            font-family: $secondary-font;
+            text-align: justify;
+        }
+        &-info{
+            width: calc(100% - 9.5rem);
+
+        }
+    }
+    @include maxwidth(1023px){
+        &-list{
+            display: block;
+        }
+        &-item{
+            width: 100%;
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+            
+            &-info{
+                padding-right: 3rem;
+            }
+        }
+    }
+}

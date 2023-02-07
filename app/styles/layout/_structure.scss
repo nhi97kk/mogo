@@ -1,0 +1,46 @@
+.wrapper{
+    max-width: $wrapper;
+    margin: 0 auto;
+}
+
+.container{
+    max-width: $container + 30px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.block-box{
+    max-width: 96rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    &-caption{
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+        font-family: $third-font;
+    }
+    &-heading{
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 3.5rem;
+        margin-bottom: 3.5rem;
+        &::after{
+            content: "";
+            @include size(6.5rem, 4px);
+            @include bg($primary-color);
+            @include absoluteCenter();
+            bottom: 0;
+        }
+    }
+    &-desc{
+        font-size: 1.5rem;
+        font-family: $secondary-font;
+        color: $text-color;
+        line-height: 1.4;
+        font-weight: 300;
+        margin-bottom: 10rem;
+    }
+
+}

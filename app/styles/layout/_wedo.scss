@@ -1,0 +1,79 @@
+.wedo{
+    padding-top: 10rem;
+    
+    &-image{
+        object-fit: cover;
+    }
+    &-item.is-active .wedo-item-content{
+        display: block;
+    }
+    &-item{
+        &:not(:last-child){
+            padding-bottom: 1rem;
+        }
+
+        &-header{
+            @include flexbox(center);
+            padding: 1.5rem;
+            border: 1px solid $darkgray-color;
+            cursor: pointer;
+        }
+        &-icon{
+            margin-right: 1.5rem;
+        }
+        &-title{
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        &-arrow{
+            margin-left: auto;
+            color: $darkgray-color;
+            font-size: 3rem;
+        }
+        &-content{
+            display: none;
+            padding: 2rem;
+            border: 1px solid $whitegray-color;
+            border-top: none;
+            font-size: 1.5rem;
+            font-family: $secondary-font;
+            font-style: italic;
+            line-height: 1.6;
+            color: $text-color;
+            font-weight: 300;
+        }
+        &-text{
+            height: 13rem;
+            overflow-y: auto;
+            padding-right: 2rem;
+
+            &::-webkit-scrollbar {
+                width: 0.6rem;
+              }
+               
+            &::-webkit-scrollbar-track {
+                background-color: $whitegray-color;
+                border-radius: 2rem;
+              }
+               
+            &::-webkit-scrollbar-thumb {
+                background-color: $thir-color;
+                border-radius: 2rem;
+              }
+        }
+    }
+    @include minwidth(767px){
+        &-container{
+            @include flexbox(stretch, space-between)
+        }
+        &-content,
+        &-image{
+            width: calc(50% - 1.5rem);
+        }
+    }
+    @include maxwidth(767px){
+        &-item:first-child{
+            padding-top: 1rem;
+        }
+    }
+}
